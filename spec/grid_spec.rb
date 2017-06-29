@@ -7,6 +7,6 @@ describe Grid do
   end
 
   def draw_grid
-    "[][][][][][][]\n" * 6
+    Array.new(7) { Array.new(6, "[]") }
   end
 end
