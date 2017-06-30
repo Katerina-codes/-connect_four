@@ -15,4 +15,10 @@ describe InputOutput do
 """)
 end
 
+  it "gets a move from the player" do
+    input = StringIO.new("0")
+    grid = InputOutput.new(output, input)
+    expect(grid.get_column).to eq("0")
+  end
+
 end

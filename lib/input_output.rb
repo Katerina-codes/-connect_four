@@ -1,7 +1,8 @@
 class InputOutput
 
-  def initialize(output = $stdout)
+  def initialize(output = $stdout, input = $stdin)
     @output = output
+    @input = input
   end
 
   def display_grid(grid)
@@ -9,6 +10,10 @@ class InputOutput
       row.join("") + "\n"
     end
     @output.puts grid.join
+  end
+
+  def get_column
+    move = @input.gets.chomp
   end
 
 end
