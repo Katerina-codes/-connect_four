@@ -13,7 +13,7 @@ class InputOutput
   end
 
   def get_move
-    @input.gets.chomp
+    @input.gets.chomp.to_i
   end
 
 end

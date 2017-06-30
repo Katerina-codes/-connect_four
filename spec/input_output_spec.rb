@@ -18,7 +18,7 @@ end
   it "gets a column number from the player" do
     input = StringIO.new("0")
     input_output = InputOutput.new(output, input)
-    expect(input_output.get_move).to eq("0")
+    expect(input_output.get_move).to eq(0)
   end
 
 end
