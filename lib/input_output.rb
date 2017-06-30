@@ -13,7 +13,7 @@ class InputOutput
   end
 
   def get_column
-    move = @input.gets.chomp
+    @input.gets.chomp
   end
 
 end
