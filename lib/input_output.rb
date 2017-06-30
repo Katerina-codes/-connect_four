@@ -12,7 +12,7 @@ class InputOutput
     @output.puts grid.join
   end
 
-  def get_column
+  def get_move
     @input.gets.chomp
   end
 
