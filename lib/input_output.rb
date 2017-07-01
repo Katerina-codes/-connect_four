@@ -16,4 +16,8 @@ class InputOutput
     @input.gets.chomp.to_i
   end
 
+  def move_valid_for_row?(move)
+    move > 0 && move <= 6
+  end
+
 end

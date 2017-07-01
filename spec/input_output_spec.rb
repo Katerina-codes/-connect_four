@@ -21,4 +21,9 @@ end
     expect(input_output.get_move).to eq(0)
   end
 
+  it "returns false if row input is not valid" do
+    input_output = InputOutput.new
+    expect(input_output.move_valid_for_row?(0)).to eq(false)
+  end
+
 end
