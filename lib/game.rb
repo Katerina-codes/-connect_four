@@ -3,7 +3,7 @@ require_relative 'grid'
 
 class Game
 
-  def initialize(input_output = InputOutput.new, grid = Grid.new)
+  def initialize(input_output, grid)
     @input_output = input_output
     @grid = grid
   end

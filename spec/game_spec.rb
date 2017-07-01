@@ -5,7 +5,8 @@ describe Game do
     input = StringIO.new("0\n0")
     output = StringIO.new
     input_output = InputOutput.new(output, input)
-    game = Game.new(input_output)
+    grid = Grid.new
+    game = Game.new(input_output, grid)
     expect(game.play_move).to eq([["[0]", "[]", "[]", "[]", "[]", "[]", "[]"], ["[]", "[]", "[]", "[]", "[]", "[]", "[]"], ["[]", "[]", "[]", "[]", "[]", "[]", "[]"], ["[]", "[]", "[]", "[]", "[]", "[]", "[]"], ["[]", "[]", "[]", "[]", "[]", "[]", "[]"], ["[]", "[]", "[]", "[]", "[]", "[]", "[]"]])
   end
 end
