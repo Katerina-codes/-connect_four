@@ -24,4 +24,12 @@ class InputOutput
     @output.puts "Please enter a valid move"
   end
 
+  def get_valid_row_move(move)
+    until move_valid_for_row?(move)
+      display_error_message
+      move = get_move
+    end
+  move
+end
+
 end

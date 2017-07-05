@@ -33,4 +33,12 @@ end
       expect(output.string).to eq("Please enter a valid move\n")
     end
 
+    it "prompts for a valid row move until move is valid" do
+      output = StringIO.new
+      input = StringIO.new("1")
+      input_output = InputOutput.new(output, input)
+      input_output.get_valid_row_move(0)
+      expect(output.string).to include("Please enter a valid move")
+    end
+
 end
