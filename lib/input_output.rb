@@ -20,4 +20,8 @@ class InputOutput
     move > 0 && move <= 6
   end
 
+  def display_error_message
+    @output.puts "Please enter a valid move"
+  end
+
 end

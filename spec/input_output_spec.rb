@@ -26,4 +26,11 @@ end
     expect(input_output.move_valid_for_row?(0)).to eq(false)
   end
 
+    it "displays error message for invalid input" do
+      output = StringIO.new
+      input_output = InputOutput.new(output)
+      input_output.display_error_message
+      expect(output.string).to eq("Please enter a valid move\n")
+    end
+
 end
