@@ -34,7 +34,11 @@ class InputOutput
 end
 
   def move_valid_for_column?(move)
-    false
+    if move == 0
+      false
+    else
+      true
+    end 
   end
 
 end

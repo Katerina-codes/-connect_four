@@ -46,4 +46,9 @@ end
       expect(input_output.move_valid_for_column?(0)).to eq(false)
     end
 
+    it "returns true if column input is 1" do
+      input_output = InputOutput.new
+      expect(input_output.move_valid_for_column?(1)).to eq(true)
+    end
+
 end
