@@ -20,6 +20,10 @@ class InputOutput
     move > 0 && move <= 6
   end
 
+  def move_valid_for_column?(move)
+    move > 0 && move < 8
+  end
+
   def display_error_message
     @output.puts "Please enter a valid move"
   end
@@ -33,8 +37,8 @@ class InputOutput
   move
 end
 
-  def move_valid_for_column?(move)
-    move > 0 && move < 8
-  end
+def get_valid_column_move
+  display_error_message
+end
 
 end

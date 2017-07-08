@@ -56,4 +56,12 @@ end
       expect(input_output.move_valid_for_column?(8)).to eq(false)
     end
 
+    it "prompts for a valid column move until move is valid" do
+      input = StringIO.new("0\n1")
+      output = StringIO.new
+      input_output = InputOutput.new(output, input)
+      input_output.get_valid_column_move
+      expect(output.string).to include("Please enter a valid move" )
+    end
+
 end
