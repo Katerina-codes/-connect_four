@@ -8,16 +8,13 @@ class Game
     @grid = grid
   end
 
-  def play_move
+  def game_flow
     grid = @grid.draw_grid
     @input_output.display_grid(grid)
-    row_number = @input_output.get_move
+    row_number = @input_output.get_valid_row_move
     column_number = @input_output.get_move
-    @grid.place_move(grid, row_number, column_number, "[0]")
-  end
-
-  def game_flow
-    marked_grid = play_move
+    marked_grid = @grid.place_move(grid, row_number, column_number, "0")
     @input_output.display_grid(marked_grid)
   end
+
 end
