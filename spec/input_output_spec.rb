@@ -1,8 +1,10 @@
 require 'input_output'
 
 describe InputOutput do
+
+  let(:output) { StringIO.new }
+
   it "displays the grid to the players" do
-    output = StringIO.new
     input_output = InputOutput.new(output)
     input_output.display_grid([["[]", "[]", "[]", "[]", "[]", "[]", "[]"], ["[]", "[]", "[]", "[]", "[]", "[]", "[]"], ["[]", "[]", "[]", "[]", "[]", "[]", "[]"], ["[]", "[]", "[]", "[]", "[]", "[]", "[]"], ["[]", "[]", "[]", "[]", "[]", "[]", "[]"], ["[]", "[]", "[]", "[]", "[]", "[]", "[]"]])
     expect(output.string).to eq(
@@ -27,14 +29,12 @@ end
   end
 
     it "displays error message for invalid input" do
-      output = StringIO.new
       input_output = InputOutput.new(output)
       input_output.display_error_message
       expect(output.string).to eq("Please enter a valid move\n")
     end
 
     it "prompts for a valid row move until move is valid" do
-      output = StringIO.new
       input = StringIO.new("0\n1")
       input_output = InputOutput.new(output, input)
       input_output.get_valid_row_move
@@ -58,7 +58,6 @@ end
 
     it "prompts for a valid column move until move is valid" do
       input = StringIO.new("0\n1")
-      output = StringIO.new
       input_output = InputOutput.new(output, input)
       input_output.get_valid_column_move
       expect(output.string).to include("Please enter a valid move" )
@@ -66,7 +65,6 @@ end
 
     it "returns a valid column move" do
       input = StringIO.new("1")
-      output = StringIO.new
       input_output = InputOutput.new(output, input)
       expect(input_output.get_valid_column_move).to eq(1)
     end
