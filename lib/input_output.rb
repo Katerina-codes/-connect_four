@@ -38,7 +38,12 @@ class InputOutput
 end
 
 def get_valid_column_move
-  display_error_message
+  move = get_move
+  if move == 0
+    display_error_message
+  else
+    move
+  end
 end
 
 end

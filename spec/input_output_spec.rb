@@ -64,4 +64,11 @@ end
       expect(output.string).to include("Please enter a valid move" )
     end
 
+    it "returns a valud column move" do
+      input = StringIO.new("1")
+      output = StringIO.new
+      input_output = InputOutput.new(output, input)
+      expect(input_output.get_valid_column_move).to eq(1)
+    end
+
 end
