@@ -39,11 +39,11 @@ end
 
 def get_valid_column_move
   move = get_move
-  if move == 0
+  until move_valid_for_column?(move)
     display_error_message
-  else
-    move
+    move = get_move
   end
+    move
 end
 
 end

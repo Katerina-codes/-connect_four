@@ -69,4 +69,11 @@ end
       expect(input_output.get_valid_column_move).to eq(1)
     end
 
+    it "displays an error message until move is valid" do
+      input = StringIO.new("9\n1")
+      input_output = InputOutput.new(output, input)
+      input_output.get_valid_column_move
+      expect(output.string).to include("Please enter a valid move\n")
+    end
+
 end
