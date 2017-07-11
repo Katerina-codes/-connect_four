@@ -73,8 +73,13 @@ end
     end
 
     it "displays a message asking for row move" do
-      input_output.ask_for_move("row")
+      input_output.ask_for_row_move("row")
       expect(output.string).to eq("Please enter a valid row move from 1 - 6\n")
+    end
+
+    it "displays a message asking for column move" do
+      input_output.ask_for_column_move("column")
+      expect(output.string).to eq("Please enter a valid column move from 1 - 7\n")
     end
 
 end
