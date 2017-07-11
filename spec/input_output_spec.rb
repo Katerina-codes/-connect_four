@@ -72,4 +72,9 @@ end
       expect(output.string).to include("Please enter a valid move\n")
     end
 
+    it "displays a message asking for row move" do
+      input_output.ask_for_move("row")
+      expect(output.string).to eq("Please enter a valid row move from 1 - 6\n")
+    end
+
 end

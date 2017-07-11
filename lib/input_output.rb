@@ -28,22 +28,26 @@ class InputOutput
     @output.puts "Please enter a valid move"
   end
 
-  def get_valid_row_move
-    move = get_move
-    until move_valid_for_row?(move)
+   def get_valid_row_move
+     move = get_move
+     until move_valid_for_row?(move)
       display_error_message
       move = get_move
     end
   move
-end
-
-def get_valid_column_move
-  move = get_move
-  until move_valid_for_column?(move)
-    display_error_message
-    move = get_move
   end
-    move
-end
+
+  def get_valid_column_move
+    move = get_move
+    until move_valid_for_column?(move)
+      display_error_message
+      move = get_move
+    end
+  move
+  end
+
+  def ask_for_move(move_type)
+    @output.puts "Please enter a valid row move from 1 - 6"
+  end
 
 end
