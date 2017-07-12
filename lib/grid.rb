@@ -7,4 +7,9 @@ class Grid
     grid[row_number][column_number] = mark
     grid
   end
+
+  def is_move_unique?(grid_in_play, row_number, column_number)
+    grid_in_play[row_number][column_number] == "0"
+  end
+
 end
