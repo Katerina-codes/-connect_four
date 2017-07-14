@@ -54,4 +54,8 @@ class InputOutput
     @output.puts "Please enter a valid column move from 1 - 7"
   end
 
+  def display_column_numbers
+    @output.puts " 1 2 3 4 5 6 7 "
+  end
+
 end
