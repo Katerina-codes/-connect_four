@@ -12,4 +12,9 @@ RSpec.describe Converter do
     expect(converter.subtract_one(2)).to eq(1)
   end
 
+  it "subtracts 1 from 3" do
+    converter = Converter.new
+    expect(converter.subtract_one(3)).to eq(2)
+  end
+
 end
