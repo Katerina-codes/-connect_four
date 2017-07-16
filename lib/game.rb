@@ -10,6 +10,7 @@ class Game
 
   def game_flow
     grid = @grid.draw_grid
+    @input_output.display_column_numbers
     @input_output.display_grid(grid)
     @input_output.ask_for_row_move("row")
     row_number = @input_output.get_valid_row_move
