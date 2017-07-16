@@ -17,7 +17,7 @@ class Game
     @input_output.ask_for_column_move("column")
     column_number = @input_output.get_valid_column_move
 
-    until !@grid.is_move_unique?(grid, row_number, column_number)
+    until @grid.is_move_unique?(grid, row_number, column_number)
       @input_output.ask_for_row_move("row")
       row_number = @input_output.get_valid_row_move
       @input_output.ask_for_column_move("column")
