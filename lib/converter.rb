@@ -1,7 +1,11 @@
 class Converter
 
   def subtract_one(move)
-    0
+    if move == 1
+      0
+    else
+      1
+    end
   end
 
 end
