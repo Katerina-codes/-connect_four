@@ -23,7 +23,7 @@ class Game
       @input_output.ask_for_column_move("column")
       column_number = @input_output.get_valid_column_move
     end
-  marked_grid = @grid.place_move(grid, row_number, column_number, "0")
+  marked_grid = @grid.place_move(grid, row_number, column_number, " 0 ")
   @input_output.display_grid(marked_grid)
   end
 
