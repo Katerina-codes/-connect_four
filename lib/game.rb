@@ -27,9 +27,9 @@ class Game
     @converter.subtract_one(row_number)
   end
 
-  def is_won_in_row?(moves)
+  def is_won?(moves)
     possible_winning_combos = []
-    (1..6).each_cons(4) {|column_move| possible_winning_combos.push(column_move)}
+    (1..7).each_cons(4) {|column_move| possible_winning_combos.push(column_move)}
     possible_winning_combos & moves
   end
 
