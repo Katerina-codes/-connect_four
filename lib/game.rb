@@ -30,14 +30,15 @@ class Game
   def game_flow
     grid = @grid.draw_grid
     display_grid(grid)
-    converted_row_move = get_row_move
-    converted_column_move = get_column_move
+    row_move = get_row_move
+    column_move = get_column_move
 
-    until @grid.is_move_unique?(grid, converted_row_move, converted_column_move)
-      converted_row_move = get_row_move
-      converted_column_move = get_column_move
+    until @grid.is_move_unique?(grid, row_move, column_move)
+      row_move = get_row_move
+      column_move = get_column_move
     end
-  marked_grid = @grid.place_move(grid, converted_row_move, converted_column_move, " 0 ")
+
+  marked_grid = @grid.place_move(grid, row_move, column_move, " 0 ")
   @input_output.display_grid(marked_grid)
   end
 
