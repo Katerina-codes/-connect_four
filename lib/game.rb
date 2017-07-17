@@ -8,6 +8,10 @@ class Game
     @grid = grid
   end
 
+  def get_column_move
+    0
+  end
+
   def game_flow
     grid = @grid.draw_grid
     @input_output.display_column_numbers
