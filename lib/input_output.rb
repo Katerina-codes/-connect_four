@@ -6,10 +6,13 @@ class InputOutput
   end
 
   def display_grid(grid)
-    grid = grid.map do |row|
+    formatted_grid = grid.map do |row|
       row.join("") + "\n"
     end
-    @output.puts grid.join
+
+    formatted_grid.each.with_index(1) do |row, index|
+      @output.print index.to_s + " ", row
+    end
   end
 
   def get_move
