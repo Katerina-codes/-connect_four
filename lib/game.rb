@@ -27,12 +27,10 @@ class Game
     @converter.subtract_one(row_number)
   end
 
-  def is_won?(moves)
-    if moves == [0] || moves == [0, 0]
-      false
-    else
-      true
-    end
+  def is_won_in_row?(moves)
+    possible_winning_combos = []
+    (1..6).each_cons(4) {|column_move| possible_winning_combos.push(column_move)}
+    possible_winning_combos & moves
   end
 
   def game_flow
