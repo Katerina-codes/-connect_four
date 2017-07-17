@@ -27,7 +27,12 @@ class Game
     @converter.subtract_one(row_number)
   end
 
+  def is_won?(moves)
+    false
+  end
+
   def game_flow
+
     grid = @grid.draw_grid
     display_grid(grid)
     row_move = get_row_move

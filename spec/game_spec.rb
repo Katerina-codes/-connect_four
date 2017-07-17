@@ -2,10 +2,9 @@ require 'game'
 
 RSpec.describe Game do
 
-  it "gets 0 as a column move" do
-    game = Game.new(InputOutput.new, Grid.new)
-    input = StringIO.new("0")
-    expect(game.get_column_move).to eq(0)
+  it "checks if game has been won" do
+    game = Game.new(InputOutput.new, Grid.new, Converter.new)
+    expect(game.is_won?(0)).to eq(false)
   end
 
 end
