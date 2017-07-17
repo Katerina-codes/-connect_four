@@ -14,7 +14,7 @@ describe Grid do
   it "returns false if 0, 0 is entered twice" do
     grid = Grid.new
     grid_in_play = draw_grid
-    grid_in_play = grid.place_move(grid_in_play, 0, 0, "0")
+    grid_in_play = grid.place_move(grid_in_play, 0, 0, " 0 ")
     expect(grid.is_move_unique?(grid_in_play, 0, 0)).to eq(false)
   end
 
