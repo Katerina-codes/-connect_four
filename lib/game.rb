@@ -10,19 +10,27 @@ class Game
     @converter = converter
   end
 
+  def display_grid(grid)
+    @input_output.display_column_numbers
+    @input_output.display_grid(grid)
+  end
+
   def get_column_move
     @input_output.ask_for_column_move("column")
     column_number = @input_output.get_valid_column_move
     converted_column_move = @converter.subtract_one(column_number)
   end
 
-  def game_flow
-    grid = @grid.draw_grid
-    @input_output.display_column_numbers
-    @input_output.display_grid(grid)
+  def get_row_move
     @input_output.ask_for_row_move("row")
     row_number = @input_output.get_valid_row_move
     converted_row_move = @converter.subtract_one(row_number)
+  end
+
+  def game_flow
+    grid = @grid.draw_grid
+    display_grid(grid)
+    converted_row_move = get_row_move
     converted_column_move = get_column_move
 
     until @grid.is_move_unique?(grid, converted_row_move, converted_column_move)
