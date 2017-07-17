@@ -83,9 +83,9 @@ end
     end
 
     it "displays numbers 1 - 7 for each column" do
-      input = StringIO.new(" 1  2  3  4  5  6  7")
+      input = StringIO.new("   1  2  3  4  5  6  7")
       input_output.display_column_numbers
-      expect(output.string).to eq(" 1  2  3  4  5  6  7\n")
+      expect(output.string).to eq("   1  2  3  4  5  6  7\n")
     end
 
 end
