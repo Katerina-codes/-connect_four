@@ -1,15 +1,13 @@
 require_relative 'input_output'
 require_relative 'grid'
+require_relative 'converter'
 
 class Game
 
-  def initialize(input_output, grid)
+  def initialize(input_output, grid, converter)
     @input_output = input_output
     @grid = grid
-  end
-
-  def get_column_move
-    0
+    @converter = converter
   end
 
   def game_flow
@@ -18,16 +16,18 @@ class Game
     @input_output.display_grid(grid)
     @input_output.ask_for_row_move("row")
     row_number = @input_output.get_valid_row_move
+    converted_row_move = @converter.subtract_one(row_number)
     @input_output.ask_for_column_move("column")
     column_number = @input_output.get_valid_column_move
+    converted_column_move = @converter.subtract_one(column_number)
 
-    until @grid.is_move_unique?(grid, row_number, column_number)
+    until @grid.is_move_unique?(grid, converted_row_move, converted_column_move)
       @input_output.ask_for_row_move("row")
       row_number = @input_output.get_valid_row_move
       @input_output.ask_for_column_move("column")
       column_number = @input_output.get_valid_column_move
     end
-  marked_grid = @grid.place_move(grid, row_number, column_number, " 0 ")
+  marked_grid = @grid.place_move(grid, converted_row_move, converted_column_move, " 0 ")
   @input_output.display_grid(marked_grid)
   end
 
