@@ -28,7 +28,7 @@ class Game
   end
 
   def is_won?(moves)
-    if moves == [0]
+    if moves == [0] || moves == [0, 0]
       false
     else
       true
