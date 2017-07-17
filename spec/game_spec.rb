@@ -17,4 +17,9 @@ RSpec.describe Game do
     expect(game.is_won?([0, 0])).to eq(false)
   end
 
+  it "returns false if moves are [0, 0, 0]" do
+    game = Game.new(InputOutput.new, Grid.new, Converter.new)
+    expect(game.is_won?([0, 0])).to eq(false)
+  end
+
 end
