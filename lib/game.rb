@@ -30,7 +30,7 @@ class Game
   def is_won?(moves)
     moves = moves.flatten.each_cons(4).map {|column_move| column_move}
     possible_winning_combos = (1..7).each_cons(4).map {|column_move| column_move}
-    possible_winning_combos & moves
+    !(moves & possible_winning_combos).empty?
   end
 
   def game_flow
