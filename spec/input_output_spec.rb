@@ -80,7 +80,7 @@ end
 
     it "displays a message asking for player 1's column move" do
       input_output.ask_for_column_move("column", "Player 1")
-      expect(output.string).to eq("Player 2, please enter a valid column move from 1 - 7\n")
+      expect(output.string).to eq("Player 1, please enter a valid column move from 1 - 7\n")
     end
 
     it "displays numbers 1 - 7 for each column" do
