@@ -28,13 +28,11 @@ class Game
   end
 
   def is_won?(moves)
-    possible_winning_combos = []
-    (1..7).each_cons(4) {|column_move| possible_winning_combos.push(column_move)}
+    possible_winning_combos = (1..7).each_cons(4).map {|column_move| column_move}
     possible_winning_combos & moves
   end
 
   def game_flow
-
     grid = @grid.draw_grid
     display_grid(grid)
     row_move = get_row_move

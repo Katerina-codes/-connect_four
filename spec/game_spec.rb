@@ -27,4 +27,9 @@ RSpec.describe Game do
     expect(game.is_won?([[4, 5, 6, 7]])).to eq([[4, 5, 6, 7]])
   end
 
+  # it "returns [1, 2, 3, 4] if moves are [[3, 4, 5, 1, 2, 3, 4]]" do
+  #   game = Game.new(InputOutput.new, Grid.new, Converter.new)
+  #   expect(game.is_won?([[3, 4, 5, 1, 2, 3, 4]])).to eq([[1, 2, 3, 4]])
+  # end
+
 end
