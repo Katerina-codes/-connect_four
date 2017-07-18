@@ -10,6 +10,7 @@ class InputOutput
       row.join("") + "\n"
     end
 
+    @output.print display_column_numbers
     formatted_grid.each.with_index(1) do |row, index|
       @output.print index.to_s + " ", row
     end
