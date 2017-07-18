@@ -32,25 +32,31 @@ class Game
     !(moves & possible_winning_combos).empty?
   end
 
+  def player_move(grid)
+    row_move = get_row_move
+    column_move = get_column_move
+
+    until @grid.is_move_unique?(grid, row_move, column_move)
+      row_move = get_row_move
+      column_move = get_column_move
+    end
+    [row_move, column_move]
+  end
+
   def game_flow
-    row_moves = []
-    column_moves = []
+    p1_row_moves = []
+    p1_column_moves = []
 
     grid = @grid.draw_grid
     display_grid(grid)
 
-    until is_won?(row_moves) || is_won?(column_moves)
-      row_move = get_row_move
-      column_move = get_column_move
-
-      until @grid.is_move_unique?(grid, row_move, column_move)
-        row_move = get_row_move
-        column_move = get_column_move
-      end
-
-      marked_grid = @grid.place_move(grid, row_move, column_move, " 0 ")
-      row_moves.push([row_move])
-      column_moves.push([column_move])
+    until is_won?(p1_row_moves) || is_won?(p1_column_moves)
+      p1_move = player_move(grid)
+      p1_row_move = p1_move[0]
+      p1_column_move = p1_move[1]
+      p1_row_moves.push([p1_row_move])
+      p1_column_moves.push([p1_column_move])
+      marked_grid = @grid.place_move(grid, p1_row_move, p1_column_move, " 0 ")
       @input_output.display_grid(marked_grid)
     end
   end
