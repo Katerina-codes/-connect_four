@@ -54,8 +54,8 @@ class InputOutput
     @output.puts "#{player_type}, please enter a valid row move from 1 - 6"
   end
 
-  def ask_for_column_move(move_type)
-    @output.puts "Please enter a valid column move from 1 - 7"
+  def ask_for_column_move(move_type, player_type)
+    @output.puts "#{player_type}, please enter a valid column move from 1 - 7"
   end
 
   def display_column_numbers
