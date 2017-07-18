@@ -9,7 +9,7 @@ class Grid
   end
 
   def is_move_unique?(grid_in_play, row_number, column_number)
-    grid_in_play[row_number][column_number] != " 0 "
+    grid_in_play[row_number][column_number] != " 0 " && grid_in_play[row_number][column_number] != " X "
   end
 
 end
