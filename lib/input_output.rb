@@ -32,7 +32,7 @@ class InputOutput
     @output.puts "Please enter a valid move"
   end
 
-   def get_valid_row_move
+   def get_valid_row_move(player_type)
      move = get_move
      until move_valid_for_row?(move)
       display_error_message
@@ -41,7 +41,7 @@ class InputOutput
   move
   end
 
-  def get_valid_column_move
+  def get_valid_column_move(player_type)
     move = get_move
     until move_valid_for_column?(move)
       display_error_message
